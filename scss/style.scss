@@ -67,6 +67,11 @@ $screen-320: 320px;
   box-sizing: border-box;
 }
 
+img {
+  width: 100%;
+  height: auto;
+}
+
 body {
   @include font-main();
 
@@ -132,6 +137,7 @@ body {
 
   &-logo {
     flex-shrink: 1;
+    display: inline-block;
   }
 
   &-nav {
@@ -168,7 +174,7 @@ body {
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: $screen-1024) {
     .section-inner {
       flex-direction: column;
     }
@@ -182,7 +188,7 @@ body {
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: $screen-425) {
     &-nav {
       a {
         & + a {
@@ -283,7 +289,7 @@ body {
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: $screen-1024) {
     .section-inner {
       flex-direction: column;
     }
@@ -304,7 +310,7 @@ body {
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: $screen-425) {
     &-info {
       &__title {
         font-size: 40px;
@@ -390,7 +396,7 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-768) {
     &-cards {
       flex-direction: column;
 
@@ -452,7 +458,7 @@ body {
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: $screen-1024) {
     &-cards {
       justify-content: center;
 
@@ -464,11 +470,11 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-768) {
     margin-top: 100px;
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: $screen-425) {
     &-cards {
       .card {
         margin-top: 30px;
@@ -486,7 +492,7 @@ body {
     }
   }
 
-  @media (max-width: 320px) {
+  @media (max-width: $screen-320) {
     &-cards {
       .card {
         margin-top: 30px;
@@ -612,7 +618,7 @@ body {
     }
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: $screen-768) {
     margin-top: 100px;
 
     &-cards {
@@ -679,7 +685,7 @@ body {
     }
   }
 
-  @media (max-width: 425px) {
+  @media (max-width: $screen-425) {
     margin-top: 100px;
     margin-bottom: 100px;
     padding: 10px;
@@ -712,6 +718,7 @@ body {
   &-info {
     &__logo {
       flex-shrink: 1;
+      display: inline-block;
     }
 
     &__desc {
@@ -738,6 +745,7 @@ body {
 
         img {
           transition: $transition-03;
+          width: initial;
         }
 
         display: flex;
@@ -841,7 +849,7 @@ body {
     line-height: 22px;
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: $screen-1024) {
     .footer-wrapper {
       flex-direction: column;
       align-items: center;
@@ -896,22 +904,19 @@ body {
       }
     }
 
+    &-contacts {
+      .desc {
+        margin-top: 25px;
+      }
+
+      .badges {
+        margin-top: 25px;
+      }
+    }
+
     &-copyright {
       margin-top: 70px;
     }
   }
 }
 // === / footer ===
-
-@media (max-width: $screen-425) {
-  img {
-    width: 100%;
-    height: auto;
-  }
-
-  .social-icon {
-    img {
-      width: initial;
-    }
-  }
-}
