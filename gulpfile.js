@@ -1,11 +1,17 @@
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const csso = require('gulp-csso');
+const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 
 const style = () => {
   return gulp
     .src('./scss/**/*.scss')
     .pipe(sass())
+    .pipe(autoprefixer())
+    .pipe(csso({ restructure: true }))
+    .pipe(cleanCSS({ compatibility: 'ie8' }))
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.stream());
 };
